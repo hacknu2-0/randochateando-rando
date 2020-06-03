@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        app:cardElevation="@dimen/cardview_default_elevation"
+        app:cardCornerRadius="10dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="centerCrop"
+                android:id="@+id/img"
+                android:transitionName="img"/>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:src="@drawable/bottom_shadow"
+                android:layout_alignBottom="@id/img"
+                android:id="@+id/shadow_bottom"/>
+            <ProgressBar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/progress_load_photo"
+                style="@android:style/Widget.ProgressBar.Small"
+                android:layout_marginTop="70dp"/>
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:id="@+id/author"
+                android:textStyle="bold"
+                android:text="Author"
+                android:layout_margin="10dp"
+                style="@android:style/TextAppearance.DeviceDefault.Medium"
+                android:layout_below="@id/img"/>
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/img"
+                android:background="@drawable/round_white"
+                android:padding="10dp"
+                android:layout_alignParentRight="true"
+                android:layout_margin="10dp">
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:src="@drawable/ic_date"/>
+                <TextView
+                    android:textColor="#606060"
+                    android:id="@+id/publishedAt"
+                    android:layout_marginLeft="27dp"
+                    android:layout_marginRight="10dp"
+                    android:text="01 January 1991"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/imageButton2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/publishedAt"
+                    android:layout_marginTop="120dp"
+                    android:onClick="share"
+                    android:layout_gravity="bottom|end"
+                    app:fabSize="mini"
+                    app:srcCompat="@drawable/ic_share" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/imageButton3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/publishedAt"
+                    android:onClick="email"
+                    android:layout_gravity="bottom"
+                    android:layout_marginTop="140dp"
+                    app:fabSize="mini"
+                    app:srcCompat="@drawable/ic_baseline_screen_share_24" />
+            </FrameLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Title"
+                android:id="@+id/title"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-light"
+                android:layout_below="@id/author"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Desc"
+                android:textSize="20sp"
+                android:id="@+id/desc"
+                android:layout_below="@id/title"
+                android:layout_margin="20dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:text="Source"
+                android:textStyle="bold"
+                android:id="@+id/source"
+                android:layout_below="@id/desc"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"/>
+
+            <TextView
+                android:id="@+id/time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/source"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="13dp"
+                android:layout_marginBottom="10dp"
+                android:text="Time" />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+</FrameLayout>
